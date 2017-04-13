@@ -13,8 +13,8 @@ $app->post('/api/SlikAi/findEmail', function ($request, $response, $args) {
     //forming request to vendor API
     $query_str = $settings['api_url'] . "email";
     $body = array();
-    $body['first_name'] = $post_data['args']['firstName'];
     $body['domain'] = $post_data['args']['domain'];
+    $body['first_name'] = $post_data['args']['firstName'];
     $body['last_name'] = $post_data['args']['lastName'];
 
 
@@ -24,7 +24,9 @@ $app->post('/api/SlikAi/findEmail', function ($request, $response, $args) {
     try {
 
         $resp = $client->request('GET', $query_str, [
-            'Authorization' => 'Bearer ' . $post_data['args']['apiKey'],
+            'headers' => [
+                'Authorization' => 'Bearer ' . $post_data['args']['apiKey']
+            ],
             'query' => $body
         ]);
 
