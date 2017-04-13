@@ -1,0 +1,57 @@
+{
+  "package": "SlikAi",
+  "tagline": "SlikAi API",
+  "description": "SlikAi",
+  "image": "http:\/\/logo.clearbit.com\/slik.ai",
+  "repo": "https:\/\/github.com\/RapidSoftwareSolutions\/Marketplace-SlikAi-Package",
+  "keywords": [
+  ],
+  "accounts": {
+    "domain": "slik.ai",
+    "credentials": [
+      "apiKey"
+    ]
+  },
+  "blocks": [
+    {
+      "name": "findEmail",
+      "description": "Find email basing on input data",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from SlikAi",
+          "required": true
+        },
+        {
+          "name": "domain",
+          "type": "String",
+          "info": "Domain of email",
+          "required": true
+        },
+        {
+          "name": "firstName",
+          "type": "String",
+          "info": "Person first name",
+          "required": true
+        },
+        {
+          "name": "lastName",
+          "type": "String",
+          "info": "Person last name",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }
+  ]
+}
