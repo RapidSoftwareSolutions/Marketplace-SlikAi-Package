@@ -24,7 +24,9 @@ $app->post('/api/SlikAi/findEmail', function ($request, $response, $args) {
     try {
 
         $resp = $client->request('GET', $query_str, [
-            'Authorization' => 'Bearer ' . $post_data['args']['apiKey'],
+            'headers' => [
+            'Authorization' => 'Bearer ' . $post_data['args']['apiKey']
+                ],
             'query' => $body
         ]);
 

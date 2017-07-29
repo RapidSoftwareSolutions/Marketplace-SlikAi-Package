@@ -15,6 +15,6 @@ return [
             'path' => __DIR__ . '/../logs/app.log',
             'level' => \Monolog\Logger::DEBUG,
         ],
-        'api_url' => 'https://slik.ai/',
+        'api_url' => 'https://old.slik.ai/',
     ],
 ];
